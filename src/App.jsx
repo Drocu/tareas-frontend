@@ -32,7 +32,7 @@ class App extends React.Component{
     }
     //console.log(dataTarea)
     //registro de nueva tarea
-    axios.post('https://cmayta-tareasapi.onrender.com/tarea',dataTarea)
+    axios.post('https://raranda-tareasapi.onrender.com/tarea',dataTarea)
     .then(res =>{
       console.log(res.data.content);
       this.state.tareas.push(res.data.content)
@@ -47,7 +47,7 @@ class App extends React.Component{
   }
 
   eliminar(cod){
-    axios.delete('https://cmayta-tareasapi.onrender.com/tarea/'+cod)
+    axios.delete('https://raranda-tareasapi.onrender.com/tarea/'+cod)
     .then(res=>{
       var temp = this.state.tareas.filter((tarea)=>tarea.id !== cod);
       this.setState({
@@ -58,7 +58,7 @@ class App extends React.Component{
   
   componentDidMount(){
     console.log("cargando tareas...")
-    axios.get('https://cmayta-tareasapi.onrender.com/tarea')
+    axios.get('https://raranda-tareasapi.onrender.com/tarea')
     .then(res=>{
       console.log(res.data.content);
       this.setState({
